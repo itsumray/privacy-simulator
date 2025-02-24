@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Report</title>
+    <title>Your Privacy Report</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Your Privacy Report</h1>
-        </div>
+        <h1>Your Privacy Report</h1>
 
-        <!-- Personal data section -->
         <div class="report">
             <h2>Personal Data:</h2>
             <p id="nameResult"></p>
@@ -21,7 +18,6 @@
             <p id="socialMediaResult"></p>
         </div>
 
-        <!-- Graphs section -->
         <div class="graphs">
             <h3>Privacy Score Breakdown</h3>
             <canvas id="privacyScoreChart" width="400" height="200"></canvas>
@@ -30,19 +26,18 @@
             <canvas id="dataPrivacyChart" width="400" height="200"></canvas>
         </div>
 
-        <!-- Privacy tips -->
         <div class="tips">
             <h3>Privacy Tips:</h3>
             <ul>
-                <li>Enable two-factor authentication on your accounts.</li>
-                <li>Use a password manager for strong and unique passwords.</li>
-                <li>Limit the amount of personal information you share online.</li>
+                <li>Enable two-factor authentication.</li>
+                <li>Use strong passwords for each account.</li>
+                <li>Limit the personal information shared online.</li>
             </ul>
         </div>
     </div>
 
     <script>
-        // Extract query parameters from the URL
+        // Get URL parameters (from query string)
         const urlParams = new URLSearchParams(window.location.search);
         const name = urlParams.get('name');
         const email = urlParams.get('email');
@@ -53,18 +48,17 @@
         document.getElementById('emailResult').innerText = `Email: ${email}`;
         document.getElementById('socialMediaResult').innerText = `Social Media: ${socialMedia}`;
 
-        // Data for the charts
-        const privacyData = [30, 40, 30];  // Just an example (e.g., 30% good, 40% moderate, 30% poor)
-        const dataPrivacy = [20, 30, 50]; // Example breakdown of data (name, email, social media)
+        // Sample data for charts
+        const privacyData = [30, 40, 30];  // Example data: [Good, Moderate, Poor]
+        const dataPrivacy = [20, 30, 50]; // Example breakdown: [Name, Email, Social Media]
 
-        // Privacy score chart (Pie Chart)
+        // Privacy score pie chart
         const ctx1 = document.getElementById('privacyScoreChart').getContext('2d');
         new Chart(ctx1, {
             type: 'pie',
             data: {
                 labels: ['Good Privacy', 'Moderate Privacy', 'Poor Privacy'],
                 datasets: [{
-                    label: 'Privacy Score',
                     data: privacyData,
                     backgroundColor: ['#4CAF50', '#FFEB3B', '#F44336'],
                     borderColor: '#fff',
@@ -76,7 +70,7 @@
             }
         });
 
-        // Data privacy breakdown chart (Bar Chart)
+        // Data privacy bar chart
         const ctx2 = document.getElementById('dataPrivacyChart').getContext('2d');
         new Chart(ctx2, {
             type: 'bar',
