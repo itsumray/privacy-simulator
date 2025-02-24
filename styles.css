@@ -1,5 +1,6 @@
+/* General body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f7fc;
     display: flex;
     justify-content: center;
@@ -8,18 +9,21 @@ body {
     margin: 0;
 }
 
+/* Container for center alignment */
 .container {
     width: 100%;
     max-width: 600px;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Header styling */
 .header h1 {
     font-size: 2rem;
     color: #333;
+    margin-bottom: 10px;
 }
 
 .header p {
@@ -27,15 +31,16 @@ body {
     color: #555;
 }
 
+/* Form styling */
 form input {
     width: 100%;
-    padding: 12px;
-    margin: 8px 0;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
     border: 2px solid #007bff;
-    border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     box-sizing: border-box;
-    background-color: #e8f5ff;
+    background-color: #e6f2ff;
     color: #333;
 }
 
@@ -47,48 +52,56 @@ form input:focus {
 
 form button {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 1.2rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
     background-color: #45a049;
 }
 
-#results {
+/* Styling for results page */
+.report {
     margin-top: 20px;
-}
-
-.results-content {
-    text-align: center;
-}
-
-.chart-container {
-    width: 100%;
-    height: 300px;
-    margin-top: 20px;
-}
-
-.hidden {
-    display: none;
-}
-
-.privacy-tips,
-.scraping-info {
-    text-align: left;
-    margin-top: 20px;
-}
-
-ul {
-    padding-left: 20px;
-}
-
-ul li {
     font-size: 1rem;
     color: #333;
+}
+
+.report h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+}
+
+.report ul {
+    list-style: none;
+    padding: 0;
+}
+
+.report ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Overall responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    form input,
+    form button {
+        padding: 12px;
+        font-size: 1rem;
+    }
 }
