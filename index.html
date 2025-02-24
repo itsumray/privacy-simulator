@@ -21,14 +21,13 @@
     </div>
 
     <script>
-        // Handle the button click event to redirect to another page
         document.getElementById('analyzeButton').addEventListener('click', function() {
-            // Get the input values
+            // Get values from the form
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const socialMedia = document.getElementById('socialMedia').value;
 
-            // Example: redirect to a result page with the data as query params
+            // Redirect to the results page with query parameters
             window.location.href = `result.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&socialMedia=${encodeURIComponent(socialMedia)}`;
         });
     </script>
