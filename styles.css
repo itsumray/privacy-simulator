@@ -1,9 +1,9 @@
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f6f9;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #6e7e8b, #e9a5d7);
     transition: background-color 0.5s ease-in-out;
 }
 
@@ -11,9 +11,9 @@ body {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -25,20 +25,25 @@ body {
 /* Header */
 h1 {
     text-align: center;
-    color: #333;
-    font-size: 2.5rem;
+    color: white;
+    font-size: 3rem;
     margin-bottom: 20px;
     animation: fadeIn 1s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Info Sections */
 .report, .charts, .tips {
     margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
 }
 
 h3 {
     font-size: 1.5rem;
     color: #333;
+    margin-bottom: 15px;
 }
 
 /* Privacy Info and Risk */
@@ -49,6 +54,7 @@ h3 {
 .personal-info p, .privacy-analysis p {
     font-size: 1.2rem;
     color: #333;
+    margin: 8px 0;
 }
 
 /* Graphs */
@@ -61,11 +67,29 @@ canvas {
 .tips ul {
     list-style: none;
     padding: 0;
+    font-size: 1.2rem;
 }
 
 .tips ul li {
-    font-size: 1.2rem;
     color: #444;
+    margin-bottom: 8px;
+}
+
+/* Gradient Buttons */
+button {
+    background: linear-gradient(135deg, #ff8a00, #e52e71);
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff4081, #3f51b5);
+    transform: scale(1.1);
 }
 
 /* Animations */
@@ -80,11 +104,21 @@ canvas {
     }
 }
 
-/* Button hover effect */
-button {
-    transition: all 0.3s ease;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-button:hover {
-    background-color: #45a049;
+::-webkit-scrollbar-thumb {
+    background-color: #3f51b5;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
