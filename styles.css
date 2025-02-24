@@ -1,7 +1,7 @@
 /* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f7fc;
+    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,8 +15,8 @@ body {
     max-width: 600px;
     background-color: #fff;
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Header styling */
@@ -28,7 +28,8 @@ body {
 
 .header p {
     font-size: 1rem;
-    color: #555;
+    color: #777;
+    margin-bottom: 20px;
 }
 
 /* Form styling */
@@ -37,16 +38,16 @@ form input {
     padding: 15px;
     margin: 12px 0;
     border-radius: 8px;
-    border: 2px solid #007bff;
+    border: 2px solid #4CAF50;
     font-size: 1.1rem;
     box-sizing: border-box;
-    background-color: #e6f2ff;
+    background-color: #f1f8e9;
     color: #333;
 }
 
 form input:focus {
-    border-color: #0056b3;
-    background-color: #cce4ff;
+    border-color: #45a049;
+    background-color: #eaf9e3;
     outline: none;
 }
 
@@ -66,7 +67,7 @@ form button:hover {
     background-color: #45a049;
 }
 
-/* Styling for results page */
+/* Result page styling */
 .report {
     margin-top: 20px;
     font-size: 1rem;
@@ -75,7 +76,7 @@ form button:hover {
 
 .report h2 {
     font-size: 1.8rem;
-    color: #007bff;
+    color: #4CAF50;
 }
 
 .report ul {
@@ -86,10 +87,10 @@ form button:hover {
 .report ul li {
     font-size: 1rem;
     margin-bottom: 10px;
-    color: #333;
+    color: #555;
 }
 
-/* Overall responsive design */
+/* Responsive design */
 @media (max-width: 600px) {
     .container {
         padding: 20px;
