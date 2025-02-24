@@ -8,33 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <!-- Title centered in the container -->
-        <h1>Privacy Simulator</h1>
-
-        <!-- Input Boxes (Email, Instagram, Password) -->
-        <div class="input-box">
-            <input type="email" id="email" placeholder="Enter your email" class="input-field">
-            <input type="text" id="instagramAccount" placeholder="Enter your Instagram account" class="input-field">
-            <input type="password" id="instagramPassword" placeholder="Enter your Instagram account password" class="input-field">
+        <h1>Your Privacy Simulator</h1>
+        <div class="input-container">
+            <input type="email" id="email" placeholder="Email Address">
+            <input type="text" id="instagram" placeholder="Instagram Account">
+            <input type="password" id="password" placeholder="Instagram Account Password">
         </div>
-
-        <!-- Analyze Button -->
-        <button class="analyze-btn" onclick="analyzePrivacy()">Analyze Privacy</button>
+        <button class="analyze-button" onclick="analyzePrivacy()">Analyze Privacy</button>
     </div>
-
-    <script>
-        function analyzePrivacy() {
-            const email = document.getElementById('email').value;
-            const instagramAccount = document.getElementById('instagramAccount').value;
-            const instagramPassword = document.getElementById('instagramPassword').value;
-
-            // Ensure data is provided before redirecting
-            if (email && instagramAccount && instagramPassword) {
-                window.location.href = `result.html?email=${encodeURIComponent(email)}&instagramAccount=${encodeURIComponent(instagramAccount)}&instagramPassword=${encodeURIComponent(instagramPassword)}`;
-            } else {
-                alert("Please fill in all fields before analyzing.");
-            }
-        }
-    </script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
