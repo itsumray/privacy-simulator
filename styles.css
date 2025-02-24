@@ -10,75 +10,54 @@ body {
 .container {
     width: 100%;
     max-width: 900px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Input Page */
+/* Header */
 h1 {
     text-align: center;
     color: #333;
     font-size: 2.5rem;
     margin-bottom: 20px;
-}
-
-.form-container {
-    margin-top: 30px;
-    text-align: center;
-}
-
-input {
-    width: 90%;
-    padding: 12px;
-    margin: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1.2rem;
-}
-
-button {
-    width: 90%;
-    padding: 14px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-/* Result Page */
-h1 {
-    text-align: center;
-    color: #333;
     animation: fadeIn 1s ease-in-out;
 }
 
-.report, .graphs, .tips {
-    margin-top: 40px;
-    animation: fadeIn 1.5s ease-in-out;
+/* Info Sections */
+.report, .charts, .tips {
+    margin-top: 20px;
 }
 
-.report p, .tips ul li {
-    font-size: 1.1rem;
+h3 {
+    font-size: 1.5rem;
     color: #333;
-    margin-bottom: 10px;
 }
 
+/* Privacy Info and Risk */
+.personal-info, .privacy-analysis {
+    margin: 10px 0;
+}
+
+.personal-info p, .privacy-analysis p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Graphs */
 canvas {
     margin-top: 20px;
     margin-bottom: 30px;
 }
 
+/* Tips */
 .tips ul {
     list-style: none;
     padding: 0;
@@ -99,4 +78,13 @@ canvas {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Button hover effect */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
 }
