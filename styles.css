@@ -1,70 +1,82 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f4f6f9;
     margin: 0;
     padding: 0;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     margin: 50px auto;
     padding: 20px;
-    background-color: white;
+    background-color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Input Page */
 h1 {
     text-align: center;
     color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .form-container {
-    margin: 20px 0;
+    margin-top: 30px;
+    text-align: center;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 90%;
+    padding: 12px;
+    margin: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.2rem;
 }
 
 button {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding: 14px;
     background-color: #4CAF50;
     color: white;
+    font-size: 1.5rem;
     border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-.report {
-    margin-top: 20px;
+/* Result Page */
+h1 {
+    text-align: center;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.report p {
-    font-size: 1.2rem;
+.report, .graphs, .tips {
+    margin-top: 40px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.graphs {
-    margin-top: 30px;
+.report p, .tips ul li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 canvas {
-    margin: 20px 0;
-}
-
-.tips {
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .tips ul {
@@ -73,7 +85,18 @@ canvas {
 }
 
 .tips ul li {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
