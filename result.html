@@ -6,32 +6,41 @@
     <title>Your Privacy Report</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animate.css"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Your Privacy Report</h1>
+        <h1 class="animate__animated animate__fadeIn">Your Privacy Report</h1>
 
         <div class="report">
-            <h2>Personal Data:</h2>
-            <p id="nameResult"></p>
-            <p id="emailResult"></p>
-            <p id="socialMediaResult"></p>
+            <div class="personal-info">
+                <h3>Personal Data Overview:</h3>
+                <p id="nameResult" class="animate__animated animate__fadeIn animate__delay-1s"></p>
+                <p id="emailResult" class="animate__animated animate__fadeIn animate__delay-1.2s"></p>
+                <p id="socialMediaResult" class="animate__animated animate__fadeIn animate__delay-1.4s"></p>
+            </div>
+
+            <div class="privacy-analysis">
+                <h3>Privacy Risk Breakdown:</h3>
+                <p id="privacyScore" class="animate__animated animate__fadeIn animate__delay-1.6s"></p>
+                <p id="privacyTips" class="animate__animated animate__fadeIn animate__delay-1.8s"></p>
+            </div>
         </div>
 
-        <div class="graphs">
+        <div class="charts">
             <h3>Privacy Score Breakdown</h3>
-            <canvas id="privacyScoreChart" width="400" height="200"></canvas>
+            <canvas id="privacyScoreChart" width="400" height="200" class="animate__animated animate__fadeIn animate__delay-2s"></canvas>
 
             <h3>Data Privacy Breakdown</h3>
-            <canvas id="dataPrivacyChart" width="400" height="200"></canvas>
+            <canvas id="dataPrivacyChart" width="400" height="200" class="animate__animated animate__fadeIn animate__delay-2.2s"></canvas>
         </div>
 
         <div class="tips">
             <h3>Privacy Tips:</h3>
             <ul>
-                <li>Enable two-factor authentication.</li>
-                <li>Use strong passwords for each account.</li>
-                <li>Limit the personal information shared online.</li>
+                <li>Enable two-factor authentication on your accounts.</li>
+                <li>Review privacy settings for each social media account.</li>
+                <li>Use a password manager to generate and store secure passwords.</li>
             </ul>
         </div>
     </div>
@@ -48,25 +57,46 @@
         document.getElementById('emailResult').innerText = `Email: ${email}`;
         document.getElementById('socialMediaResult').innerText = `Social Media: ${socialMedia}`;
 
+        // Generate Privacy Scores (For demonstration)
+        const privacyRisk = Math.floor(Math.random() * 100) + 1;  // Random risk score (1 to 100)
+        const privacyTipsText = privacyRisk > 60 ? 
+            "Consider tightening your privacy settings to enhance security." : 
+            "Your privacy settings are strong, but some improvements can still be made.";
+
+        // Display Privacy Risk and Tips
+        document.getElementById('privacyScore').innerText = `Privacy Risk Score: ${privacyRisk}%`;
+        document.getElementById('privacyTips').innerText = privacyTipsText;
+
         // Sample data for charts
-        const privacyData = [30, 40, 30];  // Example data: [Good, Moderate, Poor]
-        const dataPrivacy = [20, 30, 50]; // Example breakdown: [Name, Email, Social Media]
+        const privacyData = [privacyRisk, 100 - privacyRisk];  // Example: [Privacy Risk, Safe]
+        const dataPrivacy = [30, 40, 30]; // Breakdown for Name, Email, and Social Media
 
         // Privacy score pie chart
         const ctx1 = document.getElementById('privacyScoreChart').getContext('2d');
         new Chart(ctx1, {
             type: 'pie',
             data: {
-                labels: ['Good Privacy', 'Moderate Privacy', 'Poor Privacy'],
+                labels: ['Risk', 'Safe'],
                 datasets: [{
                     data: privacyData,
-                    backgroundColor: ['#4CAF50', '#FFEB3B', '#F44336'],
+                    backgroundColor: ['#F44336', '#4CAF50'],
                     borderColor: '#fff',
                     borderWidth: 1
                 }]
             },
             options: {
-                responsive: true
+                responsive: true,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                        }
+                    }
+                }
             }
         });
 
@@ -85,7 +115,18 @@
                 }]
             },
             options: {
-                responsive: true
+                responsive: true,
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                        }
+                    }
+                }
             }
         });
     </script>
