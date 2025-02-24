@@ -9,16 +9,16 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Privacy Report</h1>
+            <h1>Your Privacy Report</h1>
         </div>
 
         <div class="report">
-            <h2>Your Privacy Results:</h2>
+            <h2>Personal Data:</h2>
             <p id="nameResult"></p>
             <p id="emailResult"></p>
             <p id="socialMediaResult"></p>
 
-            <h3>Tips for Protecting Your Privacy:</h3>
+            <h3>Privacy Tips:</h3>
             <ul>
                 <li>Enable two-factor authentication on your accounts.</li>
                 <li>Use a password manager for strong and unique passwords.</li>
@@ -28,7 +28,6 @@
     </div>
 
     <script>
-        // Extract query parameters from the URL and display them
         const urlParams = new URLSearchParams(window.location.search);
         const name = urlParams.get('name');
         const email = urlParams.get('email');
