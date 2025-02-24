@@ -17,6 +17,16 @@
             <p><strong>Instagram Account:</strong> <span id="resultInstagramAccount"></span></p>
             <p><strong>Instagram Password:</strong> <span id="resultInstagramPassword"></span></p>
 
+            <!-- Privacy Score -->
+            <p><strong>Privacy Score:</strong> <span id="privacyScore"></span></p>
+
+            <!-- Data Exposure and Risk Levels -->
+            <div id="exposureText"></div>
+
+            <!-- Privacy Tips -->
+            <h3>Privacy Tips:</h3>
+            <ul id="privacyTipsList"></ul>
+
             <!-- Placeholder for chart (privacy data visualization) -->
             <canvas id="privacyChart" width="400" height="200"></canvas>
         </div>
@@ -34,17 +44,51 @@
         document.getElementById('resultInstagramAccount').textContent = instagramAccount;
         document.getElementById('resultInstagramPassword').textContent = instagramPassword;
 
+        // Privacy score (random for demo purposes, could be more sophisticated in reality)
+        let privacyScore = Math.floor(Math.random() * 100); // Random score between 0 and 100
+        document.getElementById('privacyScore').textContent = privacyScore;
+
+        // Data Exposure Descriptions & Risk Levels
+        let exposureText = `
+            <h3>Email Exposure:</h3>
+            <p>Email is often leaked in data breaches. This is a medium-risk data point. Make sure to keep it protected by using a strong password.</p>
+            <p><strong>Risk Level:</strong> Medium</p>
+            <h3>Instagram Account Exposure:</h3>
+            <p>Your Instagram account could be vulnerable to phishing attacks, social engineering, or hacking attempts. It's important to secure it with strong passwords and two-factor authentication.</p>
+            <p><strong>Risk Level:</strong> High</p>
+            <h3>Instagram Password Exposure:</h3>
+            <p>Password is the most sensitive data. If it's weak or reused across multiple platforms, it increases the chances of being compromised.</p>
+            <p><strong>Risk Level:</strong> High</p>
+        `;
+        document.getElementById('exposureText').innerHTML = exposureText;
+
+        // Privacy Tips
+        const privacyTips = [
+            "Use two-factor authentication for added security on Instagram.",
+            "Change your password regularly, and don't use the same one for different sites.",
+            "Enable a password manager to help you create and store strong, unique passwords.",
+            "Be careful about sharing your email online—spammers can use it for malicious purposes.",
+            "Consider using a disposable email for signing up for less trusted services."
+        ];
+
+        const tipsList = document.getElementById('privacyTipsList');
+        privacyTips.forEach(tip => {
+            const listItem = document.createElement('li');
+            listItem.textContent = tip;
+            tipsList.appendChild(listItem);
+        });
+
         // Initializing the chart
         const ctx = document.getElementById('privacyChart').getContext('2d');
         const privacyChart = new Chart(ctx, {
-            type: 'pie', // Using a pie chart to show privacy data
+            type: 'bar', // Bar chart to represent the privacy risks
             data: {
-                labels: ['Data Shared', 'Data Not Shared'],
+                labels: ['Email', 'Instagram Account', 'Instagram Password'],
                 datasets: [{
-                    label: 'Privacy Data Breakdown',
-                    data: [65, 35], // Example data; adjust it based on actual input
-                    backgroundColor: ['#FF0066', '#6600FF'],
-                    borderColor: ['#FF0066', '#6600FF'],
+                    label: 'Privacy Risk Levels',
+                    data: [50, 80, 90], // Risk levels based on the above exposure texts
+                    backgroundColor: ['#FFCC00', '#FF0000', '#990000'],
+                    borderColor: ['#FFCC00', '#FF0000', '#990000'],
                     borderWidth: 1
                 }]
             },
