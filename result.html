@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Report</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Report</h1>
+        </div>
+
+        <div class="report">
+            <h2>Your Privacy Results:</h2>
+            <p id="nameResult"></p>
+            <p id="emailResult"></p>
+            <p id="socialMediaResult"></p>
+
+            <h3>Tips for Protecting Your Privacy:</h3>
+            <ul>
+                <li>Enable two-factor authentication on your accounts.</li>
+                <li>Use a password manager for strong and unique passwords.</li>
+                <li>Limit the amount of personal information you share online.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Extract query parameters from the URL and display them
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+        const socialMedia = urlParams.get('socialMedia');
+
+        document.getElementById('nameResult').innerText = `Name: ${name}`;
+        document.getElementById('emailResult').innerText = `Email: ${email}`;
+        document.getElementById('socialMediaResult').innerText = `Social Media: ${socialMedia}`;
+    </script>
+</body>
+</html>
