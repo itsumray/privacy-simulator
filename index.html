@@ -8,27 +8,26 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Privacy Simulator</h1>
-            <p>Check how exposed you are online. Let's see how much data you've shared!</p>
+        <h1>Privacy Simulator</h1>
+
+        <div class="form-container">
+            <input type="text" id="name" placeholder="Enter your name">
+            <input type="email" id="email" placeholder="Enter your email">
+            <input type="text" id="socialMedia" placeholder="Enter your social media">
+
+            <button id="analyzeBtn">Analyze Privacy</button>
         </div>
-        <form id="privacyForm" onsubmit="return false;">
-            <input type="text" id="name" placeholder="Enter your full name" required>
-            <input type="email" id="email" placeholder="Enter your email address" required>
-            <input type="text" id="socialMedia" placeholder="Enter your social media handle" required>
-            <button type="button" id="analyzeButton">Analyze Privacy</button>
-        </form>
     </div>
 
     <script>
-        document.getElementById('analyzeButton').addEventListener('click', function() {
-            // Get values from the form
+        document.getElementById('analyzeBtn').addEventListener('click', function () {
+            // Get input values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const socialMedia = document.getElementById('socialMedia').value;
 
-            // Redirect to the results page with query parameters
-            window.location.href = `result.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&socialMedia=${encodeURIComponent(socialMedia)}`;
+            // Redirect to result page with data
+            window.location.href = `result.html?name=${name}&email=${email}&socialMedia=${socialMedia}`;
         });
     </script>
 </body>
