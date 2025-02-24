@@ -1,73 +1,70 @@
-/* General body styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f0f0f0;
     margin: 0;
+    padding: 0;
 }
 
-/* Container for center alignment */
 .container {
     width: 100%;
     max-width: 800px;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-/* Header styling */
-.header h1 {
-    font-size: 2rem;
+h1 {
+    text-align: center;
     color: #333;
-    margin-bottom: 10px;
 }
 
-.header p {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 20px;
+.form-container {
+    margin: 20px 0;
 }
 
-/* Report styling */
-.report h2 {
-    font-size: 1.5rem;
-    color: #4CAF50;
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.report {
+    margin-top: 20px;
 }
 
 .report p {
     font-size: 1.2rem;
-    color: #333;
 }
 
-/* Graphs styling */
 .graphs {
     margin-top: 30px;
 }
 
-.graphs h3 {
-    font-size: 1.4rem;
-    color: #2196F3;
-    margin-bottom: 20px;
-}
-
 canvas {
     margin: 20px 0;
-    max-width: 100%;
-    height: auto;
 }
 
-/* Tips section */
 .tips {
-    margin-top: 40px;
-}
-
-.tips h3 {
-    font-size: 1.4rem;
-    color: #FF9800;
+    margin-top: 30px;
 }
 
 .tips ul {
@@ -77,6 +74,6 @@ canvas {
 
 .tips ul li {
     font-size: 1rem;
+    color: #333;
     margin-bottom: 10px;
-    color: #555;
 }
