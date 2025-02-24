@@ -29,12 +29,20 @@ body {
 
 form input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 8px 0;
-    border: 1px solid #ccc;
+    border: 2px solid #4CAF50;
     border-radius: 4px;
     font-size: 1rem;
     box-sizing: border-box; /* Makes sure padding is included in width */
+    background-color: #e8f5e9;
+    color: #333;
+}
+
+form input:focus {
+    border-color: #007bff;
+    background-color: #f0f9ff;
+    outline: none;
 }
 
 form button {
