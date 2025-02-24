@@ -1,7 +1,7 @@
-// Attach the event listener to the new button
+// Ensure the 'analyzeButton' works properly
 document.getElementById('analyzeButton').addEventListener('click', function(event) {
-    // Prevent default behavior (in case there was any remaining form behavior)
-    event.preventDefault(); 
+    // Prevent any default form submission behavior
+    event.preventDefault();
 
     // Get the input values
     const name = document.getElementById('name').value;
