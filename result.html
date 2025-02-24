@@ -8,18 +8,18 @@
 </head>
 <body>
     <div class="result-container">
-        <h1>Privacy Report</h1>
+        <h1>Your Privacy Report</h1>
         
         <div class="result-box">
             <p><strong>Name:</strong> <span id="resultName"></span></p>
             <p><strong>Email:</strong> <span id="resultEmail"></span></p>
             <p><strong>Social Media:</strong> <span id="resultSocialMedia"></span></p>
-            <!-- Graph and Pie Chart will be here -->
+            <!-- Placeholder for graphs and charts -->
         </div>
     </div>
 
     <script>
-        // Extracting the data from URL
+        // Extracting the data from the URL
         const urlParams = new URLSearchParams(window.location.search);
         const name = urlParams.get('name');
         const email = urlParams.get('email');
@@ -30,7 +30,7 @@
         document.getElementById('resultEmail').textContent = email;
         document.getElementById('resultSocialMedia').textContent = socialMedia;
 
-        // You can add code for generating graphs and pie charts here
+        // Placeholder for adding graphs, pie charts, etc.
     </script>
 </body>
 </html>
