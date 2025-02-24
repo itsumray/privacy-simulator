@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Privacy Simulator</h1>
+            <p>Check how exposed you are online. Let's see how much data you've shared!</p>
+        </div>
+        <form id="privacyForm">
+            <input type="text" id="name" placeholder="Enter your full name" required>
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            <input type="text" id="socialMedia" placeholder="Enter your social media handle" required>
+            <button type="submit">Analyze Privacy</button>
+        </form>
+
+        <div id="results" class="hidden">
+            <div class="results-content">
+                <h2>Your Privacy Report:</h2>
+                <p id="searchResult"></p>
+                <div class="chart-container">
+                    <canvas id="dataExposureChart"></canvas>
+                </div>
+                <div class="privacy-tips">
+                    <h3>Privacy Tips:</h3>
+                    <ul id="privacyTips">
+                        <li>Consider using a VPN to encrypt your data.</li>
+                        <li>Never share personal details like your address or phone number publicly.</li>
+                        <li>Enable two-factor authentication to protect your accounts.</li>
+                    </ul>
+                </div>
+                <div class="scraping-info">
+                    <h3>What is Data Scraping?</h3>
+                    <p>Data scraping is when someone extracts your publicly available data without your consent. This information is often used to sell or create targeted ads. Be cautious about what you post online!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
