@@ -1,5 +1,5 @@
 document.getElementById('privacyForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+    event.preventDefault();  // Prevent form from resetting the page
 
     // Get the input values
     const name = document.getElementById('name').value;
@@ -19,6 +19,7 @@ document.getElementById('privacyForm').addEventListener('submit', function(event
     document.getElementById('results').classList.remove('hidden');
 });
 
+// Simulate a search result based on the name, email, and social media handle
 function simulateSearch(name, email, socialMedia) {
     // Fake some search results based on the inputs
     const dataFound = [
@@ -30,6 +31,7 @@ function simulateSearch(name, email, socialMedia) {
     return dataFound.join('\n');
 }
 
+// Create the pie chart using Chart.js
 function createDataExposureChart() {
     const ctx = document.getElementById('dataExposureChart').getContext('2d');
     
