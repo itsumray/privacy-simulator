@@ -31,17 +31,17 @@ form input {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
-    border: 2px solid #4CAF50;
+    border: 2px solid #007bff;
     border-radius: 4px;
     font-size: 1rem;
-    box-sizing: border-box; /* Makes sure padding is included in width */
-    background-color: #e8f5e9;
+    box-sizing: border-box;
+    background-color: #e8f5ff;
     color: #333;
 }
 
 form input:focus {
-    border-color: #007bff;
-    background-color: #f0f9ff;
+    border-color: #0056b3;
+    background-color: #cce4ff;
     outline: none;
 }
 
