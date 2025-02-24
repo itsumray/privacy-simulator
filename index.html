@@ -9,26 +9,30 @@
 <body>
     <div class="container">
         <h1>Privacy Simulator</h1>
-
-        <div class="form-container">
+        
+        <div class="input-box">
             <input type="text" id="name" placeholder="Enter your name">
             <input type="email" id="email" placeholder="Enter your email">
-            <input type="text" id="socialMedia" placeholder="Enter your social media">
-
-            <button id="analyzeBtn">Analyze Privacy</button>
+            <input type="text" id="socialMedia" placeholder="Enter your social media handle">
         </div>
+
+        <button onclick="analyzePrivacy()">Analyze Privacy</button>
     </div>
 
     <script>
-        document.getElementById('analyzeBtn').addEventListener('click', function () {
-            // Get input values
+        function analyzePrivacy() {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const socialMedia = document.getElementById('socialMedia').value;
 
-            // Redirect to result page with data
-            window.location.href = `result.html?name=${name}&email=${email}&socialMedia=${socialMedia}`;
-        });
+            // Redirect to result page with input data
+            if (name && email && socialMedia) {
+                window.location.href = `result.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&socialMedia=${encodeURIComponent(socialMedia)}`;
+            } else {
+                alert("Please fill in all fields before analyzing.");
+            }
+        }
     </script>
 </body>
 </html>
+
